@@ -1,0 +1,365 @@
+*, *::after, *::before {margin:0; padding: 0;box-sizing: border-box;}
+.first {
+	height: 800px;
+	background-image: url(images/01.png);
+}
+.changean {
+	height: 800px;
+	/*background-color: black;    此处为不让子元素继承透明度，使用下面那种方法
+	opacity: 0.6;*/      
+	background: rgba(0,0,0,0.6);
+}
+
+.first .word {
+	position: relative;
+	top: 100px;
+	width: 650px;
+	margin: 0 auto;
+	color: white;
+	font-size: 50px;
+	text-align: center;
+
+}
+.first .word p {
+	position: relative;
+	top: 50px;
+	font-size: 17px;
+	color: #ADADAD;
+}
+.first .register {
+	position: relative;
+	top: 200px;
+	width: 800px;
+	height: 250px;
+	margin:0 auto;
+	border:1px #ADADAD solid;
+	text-align: center;
+}
+.first .register .title {
+	color: white;
+	padding: 10px;
+	margin-top: 50px;
+}
+.first .register .shuru {
+
+}
+.first .register .shuru input {
+	margin-top: 50px;
+	border:1px #ADADAD solid;
+	height: 40px;
+	padding: 10px;
+}
+.first .register .shuru input[type="text"],input[type="password"] {	
+	width: 250px;
+	background: rgba(0,0,0,0);
+}
+.first .register .shuru input[type="submit"] {
+	width: 100px;
+	color: black;
+	background-color: white;
+	
+}
+.second {
+	
+	height:600px;
+}
+.second .title {
+	width: 800px;
+
+	margin:0 auto;
+	text-align: center;
+}
+.second .title p:first-child {
+	margin-top: 50px;
+	padding: 10px;
+}
+.second .title p:last-child {
+	margin-top: 10px;
+	padding:10px;
+	font-size: 50px;
+}
+.second .items{
+	width: 800px;
+	margin: 10px auto;
+	display: flex;
+	justify-content: space-between;
+}
+.second .items .item {
+	width: 400px;
+	display: flex;
+	padding: 20px;
+	justify-content: space-between;
+
+}
+.second .items .item img{
+	width: 50px;
+	height: 40px;
+}
+.second .items .item .words {
+	margin-left: 20px;
+}
+.second .items .item .words p:first-child{
+	padding-bottom: 10px;
+}
+.second .items .item .words p:last-child{
+	color: #ADADAD;
+	font-size: 15px;
+}
+
+.third{
+	overflow: hidden;
+	height: 800px;
+	background-image: url(images/02.png);
+}
+/*.changean2{
+	height: 800px;
+	background-color: black;    此处为不让子元素继承透明度，使用下面那种方法
+	opacity: 0.6;      
+	background: rgba(0,0,0,0.6);
+
+}*/
+.third .left {
+	width: 34%;
+	position: relative;
+	left: 15%;
+	top: 10%;
+	float: left;
+	color: white;
+}
+.third .left p:first-child {
+	font-size: 50px;
+	margin-bottom: 20px;
+	margin-bottom: 10px;
+}
+.third .left p:nth-child(2) {
+	font-size: 22px;
+	color: #ADADAD;
+	margin-bottom: 20px;
+}
+.third .left input[type="button"]{
+	margin-top: 30px;
+	background-color: white;
+	height: 50px;
+	width: 200px;
+	border: 1px #ADADAD solid;
+
+}
+.third .left input[type="button"]:nth-child(4){
+	margin-left: 20px;
+	color: #ADADAD;
+	background: rgba(0,0,0,0);
+}
+.third .right {
+	position: relative;
+	top: 8%;
+	height: 600px;
+	width: 42%;
+	float: right;
+	border:1px #ADADAD solid;
+	border-top-left-radius:10%;
+	border-bottom-left-radius: 10%; 
+}
+.third .right .content {
+	position: relative;
+	top: 8%;
+	left: 5%;
+	background-color: white;
+	height: 500px;
+}
+
+.third .right .content  p {
+	text-align: center;
+	margin-top: 15px;
+}
+.third .right .content h2{
+	text-align: center;
+	padding-top: 40px;
+}
+.third .right .content .items{
+
+		position: relative;
+		left: 5%;
+		top: 12%;
+}
+.third .right .content .items .item{
+	width: 176px;
+	float: left;
+	height: 300px;
+	margin-left: 15px;
+	border:1px #ADADAD solid;
+}
+.third .right .content .items .item p:last-child {
+	font-size: 10px;
+	color: #ADADAD;
+}
+.forth{
+	height: 400px;
+	border-bottom: 1px #ADADAD solid;
+	text-align: center;
+	margin-top: 100px;
+}
+.forth .items{
+	width: 800px;
+	margin: 20px auto;
+	overflow: hidden;
+}
+.forth .item {
+	margin:20px 5px;
+	width: 255px;
+	float: left;
+}
+.forth .item p{
+	line-height: 25px;
+}
+.forth .item p:last-child {
+	padding: 10px;
+	color: #ADADAD;
+	font-size: 14px;
+}
+.fifth {
+	height: 900px;
+	border-bottom: 1px #ADADAD solid;
+}
+.fifth .item {
+	display: flex;
+	width: 870px;
+	margin: 80px auto;
+}
+.fifth .item img {
+	width: 500px;
+}
+.fifth .item .words {
+	margin:50px  50px;
+	line-height: 25px;
+}
+.fifth .item .words p:last-child {
+	color: #ADADAD;
+	margin-top: 20px;
+}
+.sixth {
+	height: 1000px;
+	width: 870px;
+	margin: 0 auto;
+
+}
+.sixth .word {
+	text-align: center;
+	width: 600px;
+	margin: 0 auto;
+}
+.sixth .word h2 {
+	font-size: 30px;
+	margin-top: 60px;
+}
+.sixth .word p {
+	color: #ADADAD;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.sixth .img-infos .info{
+	position: relative;
+	float: left;
+	padding: 5px;
+	margin: 5px;
+}
+.sixth .img-infos .info img {
+	width: 400px;
+	height: 340px;
+	
+}
+
+.sixth .img-infos .info .word {
+	position: absolute;
+	top:5px;
+	width: 400px;
+	height: 340px;
+	background: rgba(0,0,0,0.6);
+	text-align: center;
+	display: none;
+}
+.sixth .img-infos .info img:hover + .word{
+	display: block;
+}
+.sixth .img-infos .info .word p{
+	padding: 20px; 
+}
+.sixth .img-infos .info .word .imgs img{
+	width: 50px;
+	height: 50px;
+}
+.seventh {
+	width: 870px;
+	height: 500px;
+		
+	margin:50px auto;
+}
+.seventh .left {
+	float: left;
+	width:400px;
+	height: 500px; 
+	border:1px #ADADAD solid;
+	text-align: center;
+}
+.seventh .left h2 {
+	margin-top: 50px;
+	font-size: 20px;
+}
+.seventh .left input[type="text"] {
+	width: 300px;
+	height: 40px;
+	margin-top: 30px;
+}
+.seventh .left input:nth-child(4) {
+	height: 150px;
+}
+.seventh .left input[type="submit"] {
+	width: 300px;
+	height: 40px;
+	margin-top: 30px;
+	background-color: black;
+	border:1px #ADADAD solid;
+	color: white;
+}
+.seventh .right {
+	margin: 80px 30px; 
+	width: 400px;
+	float: left;
+}
+.seventh .right h2{
+	margin-bottom: 20px;
+}
+.seventh .right p{
+	margin-bottom: 20px;
+	color: #ADADAD;
+	font-size: 15px;
+}
+.seventh .right .info img {
+	float: left;
+}
+.seventh .right .info p {
+	margin-left: 50px;
+}
+.seventh .right .info p:first-child {
+	float: left;
+
+}
+footer {
+	height: 350px;
+	background-color: black;
+	color: white;
+	display: flex;
+}
+footer .words {
+	width: 250px;
+	line-height: 50px;
+	margin-left: 150px;
+	margin-top: 50px;
+
+}
+footer .words h2 {
+	font-size: 16px;
+}
+footer .words p{
+	color: #ADADAD;
+	font-size: 15px;
+}
