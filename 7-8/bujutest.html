@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*, *::after, *::before {margin:0; padding: 0;box-sizing: border-box;}
+	
+		.top{
+			height: 50px;
+			background-color: black;
+			color: white;
+		}
+		.zuhe{
+			width: 960px;
+			margin:0 auto;
+		}
+		.top .logo{
+			line-height: 50px;
+			font-size: 20px;
+			float: left;
+		}
+		.top  ul{
+			float: right;
+		}
+		
+		.top ul li{
+			margin: 5px;
+			list-style-type: none;
+			float: left;
+		}
+		.top ul  li a{
+			color: white;
+		}
+		.banner{
+			height: 200px;
+			background-color: green;
+		}
+		.banner .number{
+			width: 960px;
+			margin: 0 auto;
+			position: relative;
+			height: 100%;
+				}
+		.banner .number ul{
+			position: absolute;
+			right: 0;
+			bottom: 10px;
+		}
+		.banner .number  ul li{
+			display: inline-block;
+			list-style: none;
+			width: 20px;
+			line-height: 35px;
+			vertical-align: bottom;
+			text-align: center;
+			background-color: white;
+			margin-right: 10px;
+		}
+		.banner .number  .active{
+			background-color: grey;
+			padding-top: 10px;
+		}
+		.main-nav{
+			position: relative;
+			margin-top: 20px;
+			border-bottom: 1px grey solid;
+			height: 50px;
+		}
+		.main-nav ul{
+			width: 960px;
+			margin: 0 auto;
+		}
+		.main-nav li{
+			height: 50px;
+			width: 80px;
+			float: left;
+			list-style: none;
+			background-color: grey;
+			line-height: 50px;
+			text-align: center;
+			border-radius: 25%;
+			border-bottom-right-radius: 0;
+			border-bottom-left-radius: 0;
+			border:1px grey solid;
+		}
+		.main-nav .active{
+			background-color: white;
+			border-bottom: 0;
+		}
+		.main{
+			width: 960px;
+			margin: 0 auto;
+			margin-top: 10px;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+		}
+		.main .contents{
+			display: flex;
+			height: 200px;
+			justify-content: space-between;
+			margin:5px 0;
+		}
+		.main .contents .content{
+			flex: 1;				
+			margin-right: 10px;
+			border: 1px grey solid;
+			display: flex;
+			align-items: center;     /*交叉轴位置*/
+			justify-content: space-between; /*主轴位置*/
+		}
+		.main .contents .content:end {
+		  margin-right: 0;
+		}
+
+
+
+
+		.footer{
+			height: 100px;
+			background-color: grey;
+			margin-top: 15px;
+			text-align: center;
+		}
+		.footer p{
+			padding-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="whole">
+		<div class="top">
+			<div class="zuhe">	
+				<div class="logo">
+				Logo
+				<img src="LinkedIn Icon.png" alt="">
+				</div>
+				
+					<ul>
+						<li><a href="#">Github</a></li>
+						<li><a href="#">Register</a></li>
+						<li><a href="#">Login</a></li>
+					</ul>
+					
+			</div>
+			
+		</div>
+		<div class="banner">
+			<div class="imgs"></div>
+			<div class="number">
+				<ul>
+					<li>1</li>
+					<li class="active">2</li>
+					<li>3</li>
+					<li>4</li>
+				</ul>
+			</div>
+		</div>
+		<div class="main-nav">
+			<ul>
+				<li class="active">	HOME</li>
+				<li>PROFLE</li>
+				<li>ABOUT</li>	
+			</ul> 	
+		</div>
+		<div class="main">
+			<div class="contents">
+				<div class="content">This is content1	</div>
+				<div class="content">MaybeContent2	</div>
+				<div class="content">content3</div>
+			</div>
+			<div class="contents">
+				<div class="content">content4	</div>
+				<div class="content">content5	</div>
+				<div class="content">content6	</div>
+				<div class="content">content7	</div>
+			</div><div class="contents">
+				<div class="content">content8	</div>
+				<div class="content">content9	</div>
+				<div class="content">content10	</div>
+			</div>
+
+		</div>
+		<div class="footer">
+			<p>@2018 ife baidu.com</p>	
+		</div>
+	</div>
+
+</body>
+</html>
