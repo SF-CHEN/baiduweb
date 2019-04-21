@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <meta charset="utf-8">
+	<style type="text/css"> 
+	 .divAll{ 
+	   width:1000px; 
+	   font-family:'黑体'; 
+	   margin:50px auto; 
+	   }
+	 #titles{ 
+	   font-weight:bold; 
+	   font-size:18px; 
+	   height:50px; 
+	   line-height:50px; 
+	   background:#FFF9F3; 
+	   text-align:center;  
+	   border:1px solid #CCC;; 
+	   }
+	 #contents{ 
+	    margin-top:20px; 
+	    background:#FFF9F3; 
+	    border:1px solid #CCC;; 
+	    }
+	  .form-itemGroup{
+	   padding:10px;  
+	    }
+	  .form-itemGroup label{
+	    display:inline-block; 
+	    width:100px; 
+	    height:32px; 
+	    line-height:32px; 
+	    color:#666; 
+	    text-align:right; 
+	    }
+	  .form-itemGroup .inputstyle{
+	    width:200px; 
+	    height:40px; 
+	    line-height:40px; 
+	    border:1px solid #CCC; 
+	    }  
+	  .form-itemGroup .default{
+	    width:200px; 
+	    height:32px; 
+	    line-height:32px; 
+	    color:#999; 
+	    } 
+	  .form-itemGroup .error{
+	    height:32px; 
+	    line-height:32px; 
+	    color:#F00; 
+	    }
+	  .form-itemGroup .success{
+	    height:32px; 
+	    line-height:32px; 
+	    color:#096; 
+	    }  
+	  .divBtn{ 
+	    margin-top:20px; 
+	    margin-left:200px; 
+	    width:100px; 
+	    height:32px; 
+	    line-height:32px; 
+	    background-color:#F93; 
+	    margin-bottom:10px; 
+	    color:#ffffff; 
+	    font-weight:bold; 
+	    border:none; 
+	    } 
+	</style>
+
+</head>
+<body>
+<div class="divAll"> 
+   <div id="titles">新用户注册</div> 
+   <div id="contents"> 
+   <h3>基本信息</h3> 
+   <hr width="95%" color="#f2f2f2"/> 
+   <form action="" onSubmit="return checkForm()" id="blackform" >
+    <div class="form-itemGroup">
+      <label for="userName">*姓名：</label> 
+      <input type="text" id="userName" class="inputstyle" onBlur="checkUserName()" oninput="checkUserName()"> 
+      <span class="default" id="nameErr">(*自己的姓名)</span> 
+    </div> 
+    <div class="form-itemGroup">
+      <label for="studentNumber">*学号：</label> 
+      <input type="text" id="studentNumber" class="inputstyle" onBlur="checkStudentNumber()" oninput="checkStudentNumber()"> 
+      <span class="default" id="stuNumberErr">(*自己的学号，14位号码)</span> 
+    </div> 
+    <div class="form-itemGroup">
+      <label for="idCard">*身份证码：</label> 
+      <input type="text" id="idCard" class="inputstyle" onBlur="checkidCard()" oninput="checkidCard()"> 
+      <span class="default" id="idCardErr">(*报名时的身份证号码或是其他证件号码)</span> 
+    </div> 
+    <div class="form-itemGroup">
+      <label for="startTime">*入学时间：</label> 
+     	<select name="ruxue" >
+						<option value="2010年入学">2010年入学</option>
+						<option value="2011年入学">2011年入学</option>
+						<option value="2012年入学">2012年入学</option>
+						<option value="2013年入学">2013年入学</option>
+		</select>
+      <span class="default" id="startErr">(*选择入学时间)</span> 
+    </div> 
+    <div class="form-itemGroup">
+      <label for="cengci">*学习层次：</label> 
+      <select name="cengci" >
+			<option value="本科">本科</option>
+			<option value="专科">专科</option>
+					
+		</select>
+      <span class="default" id="cengciErr">(*请选择正确的层次，才能够正常学习)</span> 
+    </div> 
+    <div class="form-itemGroup">
+      <label for="major">专业：</label> 
+      <select name="major" >
+						<option value="0">请选择专业.....</option>
+						<option value="计算机科学与技术">计算机科学与技术</option>
+						<option value="软件工程">软件工程</option>
+		</select>
+      <span class="default" id="majorErr">*（选择所学专业,请注意自己学习层次，高起专为专科，专升本为本科）</span> 
+    </div> 
+    <div class="form-itemGroup">
+      <label for="userName2">*注册用户名：</label> 
+      <input type="userName2" id="userName2" class="inputstyle" onBlur="checkuserName2()" oninput="checkuserName2()"> 
+      <span class="default" id="userName2Err">*（长度限制为3-12位，必须使用英文字母或字母加数字的组合，中间不能含有空格或者+、@等特殊字符。)</span> 
+    </div> 
+    <div class="form-itemGroup">
+      <label for="userPasword">密码：</label> 
+      <input type="password" id="userPasword" class="inputstyle" onBlur="checkPassword()" oninput="checkPassword()"> 
+      <span class="default" id="passwordErr">（至少6位）请输入密码，区分大小写。请不要使用任何类似 '*'、' ' 或 HTML 字符 </span> 
+    </div> 
+    <div class="form-itemGroup">
+      <label for="userConfirmPasword">确认密码：</label> 
+      <input type="password" id="userConfirmPasword" class="inputstyle" onBlur="ConfirmPassword()" oninput="ConfirmPassword()"> 
+      <span class="default" id="conPasswordErr">（至少6位）请再输一遍确认</span> 
+    </div> 
+     <div class="form-itemGroup">
+      <label for="question">*密码问题</label> 
+      <select name="question" >
+			<option value="本科">本科</option>
+			<option value="专科">专科</option>
+					
+		</select>
+      <span class="default" id="questionErr">*忘记密码的提示问题</span> 
+    </div> 
+    <div class="form-itemGroup">
+      <label for="answer">*问题答案：</label> 
+      <input type="text" id="answer" class="inputstyle" onBlur="checkAnswer()" oninput="checkAnswer()"> 
+      <span class="default" id="answerErr">*忘记密码的提示问题答案，用于取回论坛密码（至少4位）</span> 
+    </div> 
+    <div class="form-itemGroup">
+      <label for="qqnumber">QQ号码：</label> 
+      <input type="text" id="qqnumber" class="inputstyle" onBlur="checkPhone()" oninput="checkPhone()"> 
+      <span class="default" id="qqErr">*  填写您的QQ地址,如100738，方便与同学的联系</span> 
+    </div> 
+    <div class="form-itemGroup">
+      <label for="emailaddress">* Email地址：</label> 
+      <input type="text" id="emailaddress" class="inputstyle" onBlur="checkemail()" oninput="checkemail()"> 
+      <span class="default" id="emailaddressErr">*  *请输入有效的邮件地址，方便与同学的联系</span> 
+    </div> 
+    <div> 
+     <button type="submit" class="divBtn">注册</button> 
+    </div> 
+   </form> 
+   </div> 
+ </div>
+
+ <script type="text/javascript">
+     var test
+	 function checkForm(){ 
+	  var nametip = checkUserName(); 
+	  var passtip = checkPassword();  
+	  var conpasstip = ConfirmPassword(); 
+	  var phonetip = checkPhone(); 
+	  var stutip=checkStudentNumber();
+	  var idCardtip=checkidCard();
+	  var userName2=checkuserName2();
+	  var answer=checkAnswer();
+	  var qq=checkPhone();
+	  var email=checkemail();
+	  return nametip && passtip && conpasstip && phonetip && stutip && idCardtip && userName && answer && qq && email; 
+	  } 
+	  //验证姓名   
+	  function checkUserName(){ 
+	  var username = document.getElementById('userName'); 
+	  var errname = document.getElementById('nameErr'); 
+	  // var pattern = /^[0-9]{14}$/;  //用户名格式正则表达式：用户名要至少三位 
+	  if(username.value.length == 0){ 
+	    errname.innerHTML="姓名不能为空"
+	    errname.className="error"
+	    return false; 
+	    } else{ 
+	     errname.innerHTML="OK"
+	     errname.className="success"; 
+	     return true; 
+	     } 
+	  
+	  } 
+	  //验证学号
+	function checkStudentNumber(){
+		var studentNumber=document.getElementById('studentNumber');
+		var stuNumberErr=document.getElementById('stuNumberErr');
+	   	var pattern = /^[0-9]{14}$/;  //学号为14位数字
+	   	 if(studentNumber.value.length == 0){ 
+	    stuNumberErr.innerHTML="学号不能为空"
+	    stuNumberErr.className="error"
+	    return false; 
+	    }else
+	   	if(!pattern.test(studentNumber.value)){ 
+	    stuNumberErr.innerHTML="14位数字";
+	    stuNumberErr.className="error"
+	    return false; 
+	    } 
+	   	else{ 
+	     stuNumberErr.innerHTML="OK"
+	     stuNumberErr.className="success"; 
+	     return true; 
+	     } 
+	}
+	//验证身份证码
+	function checkidCard(){
+		var idCard=document.getElementById('idCard');
+		var idCardErr=document.getElementById('idCardErr');
+	   	var pattern =/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;  //身份证号
+	   	 if(idCard.value.length == 0){ 
+	    idCardErr.innerHTML="身份证不能为空"
+	    idCardErr.className="error"
+	    return false; 
+	    }else
+	   	if(!pattern.test(idCard.value)){ 
+	    idCardErr.innerHTML="身份证不符合规范";
+	    idCardErr.className="error"
+	    return false; 
+	    } 
+	   	else{ 
+	     idCardErr.innerHTML="OK"
+	     idCardErr.className="success"; 
+	     return true; 
+	     } 
+	}
+	 //验证用户名   
+	  function checkuserName2(){ 
+	  var username2 = document.getElementById('userName2'); 
+	  var errname2 = document.getElementById('userName2Err'); 
+	  var pattern = /^[A-Za-z0-9]{3,12}$/;  //用户名格式正则表达式：用户名要至少三位 
+	  if(username2.value.length == 0){ 
+	    errname2.innerHTML="用户名不能为空"
+	    errname2.className="error"
+	    return false; 
+	    }else if(!pattern.test(username2.value)){
+		errname2.innerHTML="用户名3-12位数字或字母数字组合";
+	    errname2.className="error"
+	    return false;
+	    } else{ 
+	     errname2.innerHTML="OK"
+	     errname2.className="success"; 
+	     return true; 
+	     } 
+	  
+	  } 
+	//验证密码   
+	function checkPassword(){ 
+	  var userpasswd = document.getElementById('userPasword'); 
+	  var errPasswd = document.getElementById('passwordErr'); 
+	  var pattern = /^\w{6,}$/; //密码要在6位
+	  if(userpasswd.value.length == 0){ 
+	    errPasswd.innerHTML="密码不能为空"
+	    errPasswd.className="error"
+	    return false; 
+	    }else
+	  if(!pattern.test(userpasswd.value)){ 
+	    errPasswd.innerHTML="至少6位"
+	    errPasswd.className="error"
+	    return false; 
+	    } 
+	   else{ 
+	     errPasswd.innerHTML="OK"
+	     errPasswd.className="success"; 
+	     return true; 
+	     } 
+	  } 
+	  //确认密码 
+	  function ConfirmPassword(){ 
+	  var userpasswd = document.getElementById('userPasword'); 
+	  var userConPassword = document.getElementById('userConfirmPasword'); 
+	  var errConPasswd = document.getElementById('conPasswordErr'); 
+	  if((userpasswd.value)!=(userConPassword.value) || userConPassword.value.length == 0){ 
+	    errConPasswd.innerHTML="上下密码不一致"
+	    errConPasswd.className="error"
+	    return false; 
+	    } 
+	   else{ 
+	     errConPasswd.innerHTML="OK"
+	     errConPasswd.className="success"; 
+	     return true; 
+	     }    
+	  } 
+	  //验证answer 
+	  function checkAnswer(){ 
+	  var answer = document.getElementById('answer'); 
+	  var answerErr = document.getElementById('answerErr'); 
+	  var pattern = /^\w{4,}$/; //验证手机号正则表达式
+	  if(answer.value.length == 0){ 
+	    answerErr.innerHTML="不能为空"
+	    answerErr.className="error"
+	    return false; 
+	    }else
+	  if(!pattern.test(answer.value)){ 
+	    answerErr.innerHTML="至少4位"
+	    answerErr.className="error"
+	    return false; 
+	    } 
+	   else{ 
+	     answerErr.innerHTML="OK"
+	     answerErr.className="success"; 
+	     return true; 
+	     } 
+	  } 
+		//验证qq 
+	  function checkPhone(){ 
+	  var userphone = document.getElementById('qqnumber'); 
+	  var phonrErr = document.getElementById('qqErr'); 
+	  var pattern =/^[1-9][0-9]{4,9}$/; //验证手机号正则表达式
+	   if(userphone.value.length == 0){ 
+	
+	    return true; 
+	    }else if(!pattern.test(userphone.value)){ 
+	    phonrErr.innerHTML="qq号码不合规范"
+	    phonrErr.className="error"
+	    return false; 
+	    } 
+	   else{ 
+	     phonrErr.innerHTML="OK"
+	     phonrErr.className="success"; 
+	     return true; 
+	     } 
+	  } 
+
+	//验证email
+	  function checkemail(){ 
+	  var emailaddress = document.getElementById('emailaddress'); 
+	  var emailaddressErr= document.getElementById('emailaddressErr'); 
+	  var pattern = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;  
+	   if(emailaddress.value.length == 0){ 
+	    emailaddressErr.innerHTML="不能为空"
+	    emailaddressErr.className="error"
+	    return false; 
+	    }else
+	  if(!pattern.test(emailaddress.value)){ 
+	    emailaddressErr.innerHTML="邮箱不符合规范"
+	    emailaddressErr.className="error"
+	    return false; 
+	    } 
+	   else{ 
+	     emailaddressErr.innerHTML="OK"
+	     emailaddressErr.className="success"; 
+	     return true; 
+	     } 
+	  } 
+
+ </script>
+</body>
+</html>
