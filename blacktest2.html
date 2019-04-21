@@ -161,7 +161,10 @@
       <span class="default" id="emailaddressErr">*  *请输入有效的邮件地址，方便与同学的联系</span> 
     </div> 
     <div> 
-     <button type="submit" class="divBtn">注册</button> 
+      <button type="submit" class="divBtn" id="divbtn">注册</button> 
+      <div id="sinfo">
+     	
+      </div>
     </div> 
    </form> 
    </div> 
@@ -180,7 +183,11 @@
 	  var answer=checkAnswer();
 	  var qq=checkPhone();
 	  var email=checkemail();
-	  return nametip && passtip && conpasstip && phonetip && stutip && idCardtip && userName && answer && qq && email; 
+	  if( nametip && passtip && conpasstip && phonetip && stutip && idCardtip && userName && answer && qq && email){
+		  var s=document.getElementById('sinfo');
+		  s.innerHTML="注册成功"
+	  }
+	  return false;
 	  } 
 	  //验证姓名   
 	  function checkUserName(){ 
