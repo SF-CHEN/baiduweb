@@ -162,7 +162,7 @@
     </div> 
     <div> 
       <button type="submit" class="divBtn" id="divbtn">注册</button> 
-      <div id="sinfo">
+      <div id="sinfo" value="">
      	
       </div>
     </div> 
@@ -186,6 +186,7 @@
 	  if( nametip && passtip && conpasstip && phonetip && stutip && idCardtip && userName && answer && qq && email){
 		  var s=document.getElementById('sinfo');
 		  s.innerHTML="注册成功"
+		  s.value="注册成功"
 	  }
 	  return false;
 	  } 
