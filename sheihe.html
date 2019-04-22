@@ -27,7 +27,10 @@
 		$("#btn").click(function(){
 			var year = $("#year").val()
 			var month = $("#month").val()
-			if(year.length < 4 || year.length >4){
+			var pattern=/^[0-9]*$/ 
+			if(pattern.test(year)&&pattern.test(month)){
+				console.log(11)
+				if(year.length < 4 || year.length >4){
 				$("#div").text("请输入4位长度的年份")
 				console.log(year)
 			}else if(year < 2003|| year>2008){
@@ -39,14 +42,15 @@
 			}else if(!((month=="01")||(month=="02")||(month=="03")||(month=="04")||(month=="05")||(month=="06")||(month=="07")||(month=="08")||(month=="09")||(month=="10")||(month=="11")||(month=="12"))){
 				console.log(month)
 				$("#div").text("请输入01-12之间的月份")
-			}else if(year.length ==4 && year > 2003&& year<2008 &&(month=="01")||(month=="02")||(month=="03")||(month=="04")||(month=="05")||(month=="06")||(month=="07")||(month=="08")||(month=="09")||(month=="10")||(month=="11")||(month=="12")){
-				$("#div").text("输入日期成功")
-				
-		
-		}
+			}else if(year.length ==4 && year > 2003&& year<2008 &&(month=="01")||(month=="02")||(month=="03")||(month=="04")||(month=="05")||(month=="06")||(month=="07")||(month=="08")||(month=="09")||(month=="10")||(month=="11")||(month=="12"))
+				$("#div").text("输入日期成功")				
+
+			}else
+		$("#div").text("请输入数字")
+			
 
 	})
 		
 	</script>
-</body>
+	</body>
 </html>
