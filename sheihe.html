@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta http-equiv=Content-Type content="text/html;charset=utf-8">
+	<title></title>
+	<style type="text/css">
+		.center{
+
+			width: 100vw;
+			height: 50vh;
+			margin-top:25vh;
+			text-align: center;
+		}
+	</style>
+	<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+</head>
+<body>
+	<div class="center">
+		<h2>请输入报表日期</h2>
+		<div id="div"></div>
+		<input type="text" name="" value="" id="year" placeholder="请输入报表年份">
+		<input type="text" name="" value="" id="month" placeholder="请输入报表月份">
+		<input type="button" name="" value="确定" id="btn">
+	</div>
+	
+	<script type="text/javascript">
+		$("#btn").click(function(){
+			var year = $("#year").val()
+			var month = $("#month").val()
+			if(year.length < 4 || year.length >4){
+				$("#div").text("请输入4位长度的年份")
+				console.log(year)
+			}else if(year < 2003|| year>2008){
+				$("#div").text("请输入2003-2008年之间的年份")
+				console.log(year)
+			}else if(month.length > 2||month.length<2){
+				$("#div").text("请输入2位长度的月份")
+				console.log(month)
+			}else if(!((month=="01")||(month=="02")||(month=="03")||(month=="04")||(month=="05")||(month=="06")||(month=="07")||(month=="08")||(month=="09")||(month=="10")||(month=="11")||(month=="12"))){
+				console.log(month)
+				$("#div").text("请输入01-12之间的月份")
+			}else if(year.length ==4 && year > 2003&& year<2008 &&(month=="01")||(month=="02")||(month=="03")||(month=="04")||(month=="05")||(month=="06")||(month=="07")||(month=="08")||(month=="09")||(month=="10")||(month=="11")||(month=="12")){
+				$("#div").text("输入日期成功")
+				
+		
+		}
+
+	})
+		
+	</script>
+</body>
+</html>
