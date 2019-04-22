@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+<div>
+	<form action="#" method="get" onsubmit="return check() ">
+  a: <input type="text" name="fname" id="fname" />
+  b: <input type="text" name="lname" id="lname" />
+  c: <input type="text" name="gname" id="gname" />
+  <input type="submit" value="Submit"  onclick="check()" />
+</form>
+<div id="result"></div>
+</div>
+<script>
+function check(){
+	var aj= document.getElementById('fname');
+	var bj= document.getElementById('lname');
+	var cj= document.getElementById('gname');
+	var a=aj.value;
+	var b=bj.value;
+	var c=cj.value;
+
+	var result=document.getElementById('result');
+
+	if(a+b>c&&a+c>b&&b+c>a&&1<=a&&a<=200&&1<=b&&b<=200&&1<=c&&c<=200){
+			if(a==b&&b==c)
+				result.innerHTML="等边三角形"
+			else{
+				if(a==c||a==b||b==c)
+					result.innerHTML="等腰三角形"
+				
+				else
+					result.innerHTML="普通三角形"
+					
+			}
+		}
+		else{
+			result.innerHTML="构不成三角形"
+	
+		}
+		return false;
+}
+	
+
+</script>
+</body>
+</html>
