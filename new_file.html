@@ -1,0 +1,188 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>My JSP 'index.jsp' starting page</title>
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<!--
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
+	
+	<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+			function validate()
+			    {
+			    //姓名
+			    var str = $("#user").val();
+        		var han = /^[\u4e00-\u9fa5]{1,5}$/;
+        		//学号
+			    var bianhao=document.forms[0].bianhao.value;
+			    var reg0 = /(^\d{14}$)/;
+			    //身份证
+			    var idcard=document.forms[0].idcard.value;
+			    var reg1 = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;  
+			    //专业
+			    var zhuanye=document.forms[0].zhuanye.value;
+			    var myselect=document.getElementById("zhuanye");
+			    var index=myselect.selectedIndex ;
+			    //注册用户名
+			    var username=document.forms[0].username.value;
+			    var reg2 = /^(?=.*[a-zA-Z]+)(?=.*[0-9]+)[a-zA-Z0-9]{3,12}$/;
+			    //密码
+			    var password=document.forms[0].password.value;
+			    var reg3 = /^[\da-zA-Z]{6,12}$/;
+			    //确认密码？
+			    var password1=document.forms[0].password1.value;
+				//问题答案
+			    var answer=document.forms[0].answer.value;
+			    //oicq号码
+			    var oicq=document.forms[0].oicq.value;
+			     var reg4 = /^[1-9][0-9]{4,9}$/gim;
+			    //email地址
+			    var email=document.forms[0].email.value;
+			    var reg5 = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+			    
+			    if(str == ''||!han.test(str)){
+			        alert("注册失败，请输入1-5位中文合法姓名！");
+
+			    }
+			    else if(reg0.test(bianhao) === false){
+			        alert("注册失败，请输入14数字学号！");
+			    }
+			    else if(reg1.test(idcard) === false){
+			        alert("注册失败，身份证输入不合法");
+			    }
+			    else if(index ==0){
+			        alert("注册失败，请选择专业");
+			    }
+			    else if(reg2.test(username) === false){
+			        alert("注册失败，请输入长度3-12位英文加数字的用户名");
+			    }
+			     else if(reg3.test(password) === false){
+			        alert("注册失败，请输入长度6-12位密码，不要使用任何类似'*'、' '或HTML字符");
+			    }
+			     else if(password1!=password){
+			        alert("注册失败，请再次输入上面的密码！");
+			    }
+			    
+			    else if(answer.length<4){
+			        alert("注册失败，提示问题答案至少四位！");
+			    }
+			    else if(reg4.test(oicq) === false){
+			        alert("注册失败，请输入正确的qq号码");
+			    }
+			    else if(reg5.test(email) === false){
+			        alert("注册失败，请输入正确格式的email");
+			    }
+
+			    else{
+			        alert("注册成功");
+			    }
+			    }
+</script>
+</head>
+  
+ 
+
+  <body>
+        <form action="index1.jsp" method="post" onsubmit="return validate_form(this)" >
+        	<table>
+        	
+        		<tr>
+        			<td>*姓名：<input type="text"  id="user" value="">	*(自己的姓名)</td>
+        		</tr>
+        		<tr>
+        			<td>*学号：<input type="text" name="bianhao" value="">	*(自己的学号，14位号码)</td>
+        		</tr>
+        		<tr>
+        			<td>*身份证码：<input type="text" name="idcard" value=""> *( 报名时的身份证号码或是其他证件的号码)</td>
+        		</tr>
+        		<tr>
+        			<td>*入学时间：
+        			     <select name="time">
+                            <option value="1" selected>2010年入学</option>
+                            <option value="2">2011年入学</option>
+                            <option value="3">2012年入学</option>
+                         </select>
+                         *(选择入学时间)
+                    </td>
+        		</tr>
+        		<tr>
+        			<td>*学习层次：
+        			     <select name="cengci">
+                            <option value="1" selected>本科</option>
+                            <option value="2">专科</option>
+                         </select>
+                         *(请选择正确层次，才能够正常学习)
+                    </td>
+        		</tr>
+        		<tr>
+        			<td>*专业：
+        			     <select name="zhuanye " id="zhuanye" >
+                            <option value="1" selected>请选择专业...</option>
+                            <option value="2">计算机科学与技术</option>
+                            <option value="2">会计专业</option>
+                            <option value="2">软件工程</option>
+                         </select>
+                         *(选择所选专业)
+                    </td>
+        		</tr>
+        		<tr>
+        			<td>*注册用户名：
+        					<input type="text" name="username" value="">
+        			 	*(长度限制为3-12位，不一定要求注册的姓名，同时注意使用英文字符+数字。)
+        			</td>
+        		</tr>
+        		<tr>
+        			<td>*密码：
+        					<input type="password" name="password" value="">
+        				*(至少六位)请输入密码，区分大小写，请不要使用任何类似'*'、' '或HTML字符
+        			</td>
+        		</tr>
+        		<tr>
+        			<td>*确认密码：
+        					<input type="password" name="password1" value="">
+        				*(至少6位)请再输一遍确认
+        			</td>
+        		</tr>
+				<tr>
+					<td>*密码问题：
+        			     <select name="question">
+                            <option value="1" selected>你的身份证号码是多少：</option>
+                            <option value="2">你最喜爱的电影是：</option>
+                            <option value="3">你最喜爱的明星是：</option>
+                         </select>
+                        *忘记密码的提示问题
+                 	</td>
+				</tr>
+				<tr>
+        			<td>
+        				*问题答案：
+        					<input type="text" name="answer" value="">
+						*忘记密码的提示问题答案，用于取回论坛密码(至少4位)
+        			</td>
+        		</tr>
+        		<tr>
+        			<td>oicq号码：<input type="text" name="oicq" value="">
+        				填写你的qq地址，方便与同学联系
+        			</td>
+        		</tr>
+        		<tr>
+        			<td>*email地址：<input type="text" name="email" value="">
+        				*请输入有效的邮件地址，方便与同学联系
+        			</td>
+        		</tr>
+        		<tr>
+        			 <td><input type="button" name="button" value="确定" onclick="validate()" /></td>
+        		</tr>
+        	</table>
+        </form>
+  </body>
+</html>
