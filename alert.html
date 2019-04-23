@@ -33,9 +33,12 @@
 
           if(money!=null){
             drink =document.getElementById("drink");
-            var y=parseInt(money.value)
-            if(y!=0.5&&y!=1)         
-            sinfo.innerHTML="请投入0.5元或者1";
+            var y=parseFloat(money.value);
+            if(y!=0.5&&y!=1){
+              sinfo.innerHTML='请投入0.5元或者1';
+              alert(y)  
+            }         
+            
             else if( y==1)
             {    
             if(n<=0)
